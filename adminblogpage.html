@@ -10,7 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
 
         body {
-            background-image: url('./study.jpg');
+            background-image: url('./school.jpg');
             /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
@@ -75,7 +75,7 @@
             display: flex;
             flex-direction: row;
             align-self: center;
-            margin-bottom: 100px;
+            margin-bottom: 40px;
         }
 
         .questionlabel,
@@ -135,6 +135,32 @@
             background-color: white;
             border-color: #333333;
         }
+
+        .buttoncenterdiv {
+            width: 1400px;
+            text-align: center;
+        }
+
+        .postquestion {
+            cursor: pointer;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            outline: none;
+            padding: 1rem;
+            background-color: #dddddd;
+            color: #666666;
+            font-family: 'Yeon Sung', cursive;
+            font-weight: 400;
+            font-size: 20px;
+            transition: all 0.2s;
+        }
+
+        .postquestion:active {
+            border-color: #333333;
+            border-radius: 10px;
+            background-color: white;
+            color: #333333;
+        }
     </style>
 </head>
 
@@ -155,6 +181,9 @@
                     <textarea class="textarea" placeholder="Enter Answer..."></textarea>
                 </div>
             </div>
+        </div>
+        <div class="buttoncenterdiv">
+            <button class="postquestion" name="postquestion">postquestion</button>
         </div>
     </form>
 </body>

@@ -91,7 +91,7 @@
 
         .passwordInputCentering .showpassword {
             position: absolute;
-            right: -40px;
+            right: 10px;
             top: 20px;
             color: #333333;
             font-family: 'Yeon Sung', cursive;
@@ -150,7 +150,8 @@
             text-align: center;
         }
 
-        .loginbutton {
+        .signupbutton {
+            cursor: pointer;
             border-radius: 10px;
             border: 2px solid transparent;
             outline: none;
@@ -163,12 +164,45 @@
             transition: all 0.2s;
         }
 
-        .loginbutton:active {
+        .signupbutton:active {
             border-color: #333333;
             border-radius: 10px;
             background-color: white;
             color: #333333;
-        }     
+        }
+        .loginbutton{
+            border: none;
+            font-family: 'Yeon Sung', cursive;
+            font-weight: 400;
+            font-size: 20px;
+            color: white;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .spacewidth{
+            width: 1400px;
+        }
+        .space{
+            width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        .space .horizontalLine{
+            color: white;
+            background-color: white;
+            height: 3px;
+            flex:3;
+        }    
+        .space span{
+            text-align: center;
+            flex: 1;
+            color: white;
+        }
+
     </style>
 </head>
 
@@ -178,7 +212,7 @@
             <label class="firstNameLabel">FirstName</label>
             <div class="firstNameBox">
                 <div class="firstNameInputCentering">
-                    <input class="firstNameInput" name="firstname" type="text" placeholder="FirstName...">
+                    <input class="firstNameInput" name="firstname" value="<?php echo $firstname ?>" type="text" placeholder="FirstName...">
                     <?php if (!(empty($errors)) && !(empty($errors['firstname']))): ?> 
                     <span class="<?php echo $errorclass ?>"><?php echo $errors['firstname'] ?></span>
                     <?php endif; ?>
@@ -189,7 +223,7 @@
             <label class="lastNameLabel">LastName</label>
             <div class="lastNameBox">
                 <div class="lastNameInputCentering">
-                    <input class="lastNameInput" name="lastname" type="text" placeholder="LastName...">
+                    <input class="lastNameInput" name="lastname" type="text" value="<?php echo $lastname ?>" placeholder="LastName...">
                     <?php if (!(empty($errors)) && !(empty($errors['lastname']))): ?> 
                     <span class="<?php echo $errorclass ?>"><?php echo $errors['lastname'] ?></span>
                     <?php endif; ?>
@@ -200,7 +234,7 @@
             <label class="emailLabel">Email</label>
             <div class="emailBox">
                 <div class="emailInputCentering">
-                    <input class="emailInput" name="email" type="email" placeholder="Email...">
+                    <input class="emailInput" name="email" type="email" value="<?php echo $email ?>" placeholder="Email...">
                     <?php if (!(empty($errors)) && !(empty($errors['email']))): ?> 
                     <span class="<?php echo $errorclass ?>"><?php echo $errors['email'] ?></span>
                     <?php endif; ?>
@@ -211,7 +245,7 @@
             <label class="passwordLabel">Password</label>
             <div class="passwordBox">
                 <div class="passwordInputCentering">
-                    <input class="passwordInput" name="password" type="password" placeholder="Password...">
+                    <input class="passwordInput" name="password" type="password" value="<?php echo $password ?>" placeholder="Password...">
                     <span class="showpassword" onclick="passworddecrypt()">show</span>
                     <?php if (!(empty($errors)) && !(empty($errors['password']))): ?> 
                     <span class="<?php echo $errorclass ?>"><?php echo $errors['password'] ?></span>
@@ -219,9 +253,23 @@
                 </div>
             </div>
         </div>
+       
         <div class="buttoncenterdiv">
-            <button class="loginbutton" name="signup">Signup</button>
+            <button class="signupbutton" name="signup">Signup</button>
         </div>
+        <div class="spacewidth">
+            <div class="space">
+                <hr class="horizontalLine" >
+                <span>Or</span>
+                <hr class="horizontalLine" >
+            </div>
+        </div>
+        
+        
+        <div class="buttoncenterdiv">
+            <button class="loginbutton" name="loginfromsignup">Already Signed Up then Login</button>
+        </div>
+        
         
     </form>
     <script>

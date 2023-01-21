@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require('config.php');
 
 function dd($value)
@@ -23,12 +23,12 @@ function insertQuery($table, $data)
 {
     global $conn;
     
-    $data = [
+    /* $data = [
         'firstname' => 'Rahul',
         'lastname' => 'Singh',
         'email' => 'hack@hack.com',
         'password' => 'hack'
-    ];
+    ]; */
 
     $sql = "INSERT INTO $table (firstname,lastname,email, password) VALUES (";
 
@@ -56,11 +56,11 @@ function insertQuery($table, $data)
         $i++;
     }
     $sql = $sql . ")";
-    echo $sql;
+    //echo $sql;
 
     $stmt = executeQuery($sql, $data);
     $id = $stmt->insert_id;
-    echo $id;
+    //echo $id;
 }
 
 function selectOne($table, $conditions)
@@ -79,6 +79,8 @@ function selectOne($table, $conditions)
     }
 
     $sql = $sql . " LIMIT 1";
+      
+    //echo $sql;
 
     $stmt = executeQuery($sql, $conditions);
 

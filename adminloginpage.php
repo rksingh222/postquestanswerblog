@@ -1,5 +1,5 @@
-
-
+<?php include("path.php"); ?>
+<?php include(ROOT_PATH . "user.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,7 +52,7 @@
             width: 350px;
             position: relative;
         }
-        .passwordInputCentering span{
+        .passwordInputCentering .showpassword{
             position: absolute;
             right: -40px;
             top: 20px;
@@ -113,17 +113,69 @@
             color: #333333;
         }
 
-        
+        .error{
+            color: white;
+            padding: 1em;
+            font-family: 'Yeon Sung', cursive;
+            width: 100%;
+            font-weight: 400;
+            font-size: 20px;
+        }
+        .invalid{
+            width: 1290px;
+            display: none;
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        .visible{
+            display: block;
+        }
+
+        .spacewidth{
+            width: 1400px;
+        }
+        .space{
+            width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        .space .horizontalLine{
+            color: white;
+            background-color: white;
+            height: 3px;
+            flex:3;
+        }    
+        .space span{
+            text-align: center;
+            flex: 1;
+            color: white;
+        }
+        .signupbutton{
+            border: none;
+            font-family: 'Yeon Sung', cursive;
+            font-weight: 400;
+            font-size: 20px;
+            color: white;
+            background-color: transparent;
+            cursor: pointer;
+        }
     </style>
 </head>
 
 <body>
-    <form>
+    <form action="adminloginpage.php" method="post">
         <div class="row">
             <label class="emailLabel">Email</label>
             <div class="emailBox">
                 <div class="emailInputCentering">
-                    <input class="emailInput" type="email" placeholder="Email...">
+                    <input class="emailInput" type="email" name="email" value="<?php echo $email ?>" placeholder="Email...">
+                    <?php if (!(empty($errors)) && !(empty($errors['email']))): ?> 
+                    <span class="<?php echo $errorclass ?>"><?php echo $errors['email'] ?></span>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -131,13 +183,34 @@
             <label class="passwordLabel">Password</label>
             <div class="passwordBox">
                 <div class="passwordInputCentering">
-                    <input class="passwordInput" type="password" placeholder="Password...">
+                    <input class="passwordInput" type="password" name="password" value="<?php echo $password ?>"  placeholder="Password...">
                     <span class="showpassword" onclick="passworddecrypt()">show</span>
+                    <?php if (!(empty($errors)) && !(empty($errors['password']))): ?> 
+                    <span class="<?php echo $errorclass ?>"><?php echo $errors['password'] ?></span>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
+        <?php if (!(empty($errors)) && !(empty($errors['emailandpasswordinvalid']))): ?> 
+        <div class="invalid <?php echo $errors['emailandpasswordinvalid'] ?>">
+            <span class="error">invalid username or password</span>
+        </div>
+        <?php endif; ?>
         <div class="buttoncenterdiv">
-            <button class="loginbutton">Login</button>
+            <button class="loginbutton" name="login">Login</button>
+        </div>
+
+        <div class="spacewidth">
+            <div class="space">
+                <hr class="horizontalLine" >
+                <span>Or</span>
+                <hr class="horizontalLine" >
+            </div>
+        </div>
+        
+        
+        <div class="buttoncenterdiv">
+            <button class="signupbutton" name="signupfrormlogin">SignUp first To Login</button>
         </div>
       
     </form>
