@@ -9,6 +9,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             background-image: url('./school.jpg');
             /* Center and scale the image nicely */
@@ -17,6 +23,9 @@
             background-size: cover;
         }
 
+        form{
+            margin-top: 50px;
+        }
         .inputBox {
             position: relative;
             width: 250px;
@@ -79,7 +88,7 @@
         }
 
         .questionlabel,
-        .textarealabel {
+        .textarealabel, .setoptionlabel {
             text-align: center;
             flex: 1;
             color: white;
@@ -89,17 +98,20 @@
             display: block;
         }
 
-        .questionrootdiv,.textareaouterspace {
+        .questionrootdiv,
+        .textareaouterspace {
             flex: 3;
         }
 
-        .questioncenteringdiv,.textareacenteringdiv {
+        .questioncenteringdiv,
+        .textareacenteringdiv {
             margin: auto;
             width: 700px;
         }
 
         .questiontextarea,
-        .textarea {
+        .textarea,
+        .optiontext {
             margin: auto;
             flex: 2;
             background-color: #dddddd;
@@ -161,6 +173,27 @@
             background-color: white;
             color: #333333;
         }
+
+        .option {
+            flex: 3;
+        }
+
+        .optiontext {
+            width: 60px;
+            height: 20px;
+            padding-top: 10px;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 10px;
+            text-align: center;
+            border-radius: 0;
+        }
+
+        .optioncenteringdiv{
+            margin: auto;
+            width: 700px;
+        }
+
     </style>
 </head>
 
@@ -174,6 +207,23 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <label class="setoptionlabel">SetOption</label>
+            <div class="option">
+                <div class="optioncenteringdiv">
+                    <label>option1</label>
+                    <input type="text" class="optiontext">
+                    <label>option2</label>
+                    <input type="text" class="optiontext">
+                    <label>option3</label>
+                    <input type="text" class="optiontext">
+                    <label>option4</label>
+                    <input type="text" class="optiontext">
+                </div>
+            </div>
+        </div>
+
+
         <div class="row">
             <label class="textarealabel">Post Answer</label>
             <div class="textareaouterspace">
