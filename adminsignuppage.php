@@ -235,8 +235,8 @@
             <div class="emailBox">
                 <div class="emailInputCentering">
                     <input class="emailInput" name="email" type="email" value="<?php echo $email ?>" placeholder="Email...">
-                    <?php if (!(empty($errors)) && !(empty($errors['email']))): ?> 
-                    <span class="<?php echo $errorclass ?>"><?php echo $errors['email'] ?></span>
+                    <?php if (!(empty($errors)) && !(empty($errors['question']))): ?> 
+                    <span class="<?php echo $errorclass ?>"><?php echo $errors['question'] ?></span>
                     <?php endif; ?>
                 </div>
             </div>

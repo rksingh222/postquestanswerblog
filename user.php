@@ -23,7 +23,7 @@ if(isset($_POST['login'])){
         if(!$user){
             $errors['emailandpasswordinvalid'] = "visible";
         }else{
-            $_SESSION['id'] = $user['id'];
+            $_SESSION['reg_id'] = $user['reg_id'];
             $_SESSION['username'] = $user['username'];
             $_SESSION['password'] = $user['password'];
             $_SESSION['message'] = 'You are now logged in';

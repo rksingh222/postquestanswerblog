@@ -30,7 +30,7 @@ function insertQuery($table, $data)
         'password' => 'hack'
     ]; */
 
-    $sql = "INSERT INTO $table (firstname,lastname,email, password) VALUES (";
+    //$sql = "INSERT INTO $table (firstname,lastname,email, password) VALUES (";
 
     $i = 0;
     $sql = "INSERT INTO $table (";
@@ -86,4 +86,34 @@ function selectOne($table, $conditions)
 
     $records = $stmt->get_result()->fetch_assoc();
     return $records;
+}
+
+function selectAll($table, $conditions = [])
+{
+
+    global $conn;
+
+    $sql = "SELECT * FROM $table";
+    if (empty($conditions)) {
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+        $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $records;
+    } else {
+
+        $i = 0;
+        foreach ($conditions as $key => $value) {
+            if ($i == 0) {
+                $sql = $sql . " WHERE $key=?";
+            } else {
+                $sql = $sql . " AND $key=?";
+            }
+            $i++;
+        }
+
+        $stmt = executeQuery($sql, $conditions);
+
+        $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $records;
+    }
 }

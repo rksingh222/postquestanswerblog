@@ -12,19 +12,22 @@ if($conn->connect_error){
 }
 
 
-
-$sql = "CREATE TABLE registration(reg_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-firstname VARCHAR(255) NOT NULL, lastname VARCHAR(255) NOT NULL,
-email VARCHAR(255) NOT NULL, password VARCHAR(255), 
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-FOREIGN KEY (reg_id) REFERENCES postquestion (reg_id) ON DELETE CASCADE ) AUTO_INCREMENT = 100";
-
-/*
+//registration table
 $sql = "CREATE TABLE registration(reg_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
 firstname VARCHAR(255) NOT NULL, lastname VARCHAR(255) NOT NULL,
 email VARCHAR(255) NOT NULL, password VARCHAR(255), 
 reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP) AUTO_INCREMENT = 100";
-*/
+if($conn->query($sql)){
+}else{
+    if($conn->errno == 1050)
+    {
+    }
+    else{
+        die("Connection Failed " . $conn->error .$conn->errno);
+    }
+    
+}
+
 
 //Create table postquestion
 $sql = "CREATE TABLE postquestion(question_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
