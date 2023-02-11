@@ -1,3 +1,5 @@
+<?php include("path.php"); ?>
+<?php include(ROOT_PATH . "post.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +83,7 @@
         }
 
         .question-section {
-            height: 600px;
+            
             border: 2px solid #e0e0e0;
             width: 960px;
             margin: auto;
@@ -166,58 +168,39 @@
             <li class="navbar-links activecolor"><a style="color:white" href="home.php">Home</a></li>
             <li class="navbar-links"><a href="adminblogpage.php">Post</a></li>
             <li class="navbar-links"><a href="#">About</a></li>
-            <li class="navbar-links"><a href="#">Contact</a></li>
+            <li class="navbar-links"><a href="contact.php">Contact</a></li>
         </ul>
     </div>
 
     <div class="main-section">
+        <?php foreach ($posts as $post) : ?>
         <div class="question-section">
-            <h4> Q. The ratio of incomes of Anil and Ajit is 5:7. The ratio of their expenditures is 3:4, then which of
-                the following is a possible ratio of the savings</h4>
+            <h4><?php echo $post['question_id'] ?>&nbsp;&nbsp;<?php echo $post['question'] ?></h4>
             <div class="options">
                 <div>
                     <div class="column-wise"><span>A</span>
-                        <h3 style="padding-left: 15px;">4:5</h3>
+                        <h3 style="padding-left: 15px;"><?php echo $post['option1'] ?></h3>
                     </div>
                 </div>
                 <div>
                     <div class="column-wise"><span>B</span>
-                        <h3 style="padding-left: 15px;">3:3</h3>
+                        <h3 style="padding-left: 15px;"><?php echo $post['option2'] ?></h3>
                     </div>
                 </div>
                 <div>
                     <div class="column-wise"><span>C</span>
-                        <h3 style="padding-left: 15px;">1:1</h3>
+                        <h3 style="padding-left: 15px;"><?php echo $post['option3'] ?></h3>
                     </div>
                 </div>
                 <div>
                     <div class="column-wise"><span>D</span>
-                        <h3 style="padding-left: 15px;">12:17</h3>
+                        <h3 style="padding-left: 15px;"><?php echo $post['option4'] ?></h3>
                     </div>
                 </div>
             </div>
-            <h4> A. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
-                professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
-                consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-                literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
-                "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book
-                is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem
-                Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-                The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their
-                exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</h4>
+            <h4><?php echo $post['answer'] ?></h4>
         </div>
-        <div class="question-section">
-
-        </div>
-        <div class="question-section">
-
-        </div>
-        <div class="question-section">
-
-        </div>
+        <?php endforeach ; ?>
     </div>
 
     <script>

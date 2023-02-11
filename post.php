@@ -3,6 +3,7 @@
 include(ROOT_PATH . "db.php");
 include(ROOT_PATH . "validatepost.php");
 
+$posts = selectAll("postquestion");
 $errors = array();
 $errorclass = "";
 $question = "";

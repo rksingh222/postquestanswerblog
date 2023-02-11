@@ -238,7 +238,7 @@
             <li class="navbar-links"><a href="home.php">Home</a></li>
             <li class="navbar-links activecolor"><a style="color:white" href="adminblogpage.php">Post</a></li>
             <li class="navbar-links"><a href="#">About</a></li>
-            <li class="navbar-links"><a href="#">Contact</a></li>
+            <li class="navbar-links"><a href="contact.php">Contact</a></li>
         </ul>
     </div>
     <form action="adminblogpage.php" method="post">

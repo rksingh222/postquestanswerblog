@@ -100,7 +100,6 @@ function selectAll($table, $conditions = [])
         $records = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
         return $records;
     } else {
-
         $i = 0;
         foreach ($conditions as $key => $value) {
             if ($i == 0) {
