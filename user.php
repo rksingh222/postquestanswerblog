@@ -38,7 +38,7 @@ if(isset($_POST['signupfrormlogin'])){
 }
 if(isset($_POST['loginfromsignup'])){
     unset($_POST['loginfromsignup']);
-    header('location:' . BASE_URL . '/adminloginpage.php' );
+    header('location:' . BASE_URL . '/index.php' );
 }
 
 if(isset($_POST['signup'])){
@@ -53,7 +53,7 @@ if(isset($_POST['signup'])){
         $errorclass = "error";
     }else{
         $userid = insertQuery("registration", $_POST);
-        header('location:' . BASE_URL . '/adminloginpage.php');
+        header('location:' . BASE_URL . '/index.php');
     }
     //dd($errors);
     
