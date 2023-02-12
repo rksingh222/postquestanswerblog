@@ -237,7 +237,7 @@
             <li class="bar"><i class="fa fa-bars"></i></li>
             <li class="navbar-links"><a href="home.php">Home</a></li>
             <li class="navbar-links activecolor"><a style="color:white" href="adminblogpage.php">Post</a></li>
-            <li class="navbar-links"><a href="#">About</a></li>
+            <li class="navbar-links"><a href="about.php">About</a></li>
             <li class="navbar-links"><a href="contact.php">Contact</a></li>
         </ul>
     </div>
