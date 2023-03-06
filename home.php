@@ -1,5 +1,8 @@
 <?php include("path.php"); ?>
-<?php include(ROOT_PATH . "post.php"); ?>
+<?php include(ROOT_PATH . "post.php"); 
+      include(ROOT_PATH . "middleware.php");
+     usersOnly();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -73,12 +76,11 @@
             background-attachment: fixed;
             
         }*/
-            html{
-                min-height: 100%;
-                position: relative;
-            }
-   
-        .container{
+      html{
+          min-height: 100%;
+          position: relative;
+       }
+       .container{
            width: 100%;
            height: 100%;
        }
@@ -197,6 +199,7 @@
             <li class="navbar-links"><a href="adminblogpage.php">Post</a></li>
             <li class="navbar-links"><a href="about.php">About</a></li>
             <li class="navbar-links"><a href="contact.php">Contact</a></li>
+            <li class="navbar-links"><a href="logout.php">Logout</a></li>
         </ul>
     </div>
 

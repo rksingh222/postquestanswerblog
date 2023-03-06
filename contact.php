@@ -1,5 +1,10 @@
 
 <!--https://formspree.io/forms/xvonkbkg/integration -->
+<?php  session_start();  
+   include("path.php");
+   include(ROOT_PATH . "middleware.php");
+   usersOnly();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -176,6 +181,7 @@
             <li class="navbar-links"><a href="adminblogpage.php">Post</a></li>
             <li class="navbar-links"><a href="about.php">About</a></li>
             <li class="navbar-links activecolor"><a style="color:white" href="home.php">Contact</a></li>
+            <li class="navbar-links"><a href="logout.php">Logout</a></li>
         </ul>
     </div>
     <div class="container">

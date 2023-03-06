@@ -1,5 +1,9 @@
 <?php include("path.php"); ?>
-<?php include(ROOT_PATH . "post.php"); ?>
+<?php include(ROOT_PATH . "post.php"); 
+  include(ROOT_PATH . "middleware.php");
+  usersOnly();
+?>
+<!-- onblur="document.getElementById('text').innerText=this.value.replace('<br/>','fix'); console.log(document.getElementById('text').innerHTML);" -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -155,6 +159,7 @@
     .questiontextarea {
         width: 700px;
         height: 80px;
+        
     }
 
     .questiontextarea:hover,
@@ -245,6 +250,10 @@
         position: relative;
         margin-bottom: 20px;
     }
+    /* for getting the br tag in text area when we hit enter  */
+    .textarea{
+        white-space: pre-wrap;
+    }
     </style>
 </head>
 
@@ -257,6 +266,7 @@
             <li class="navbar-links activecolor"><a style="color:white" href="adminblogpage.php">Post</a></li>
             <li class="navbar-links"><a href="about.php">About</a></li>
             <li class="navbar-links"><a href="contact.php">Contact</a></li>
+            <li class="navbar-links"><a href="logout.php">Logout</a></li>
         </ul>
     </div>
     <div class="container">
@@ -303,7 +313,7 @@
                 <label class="textarealabel">Post Answer</label>
                 <div class="textareaouterspace">
                     <div class="textareacenteringdiv">
-                        <textarea class="textarea" placeholder="Enter Answer..." name="answer"
+                        <textarea class="textarea" id="text" placeholder="Enter Answer..." name="answer"
                             value="<?php echo $answer ?>"></textarea>
                         <?php if (!(empty($errors)) && !(empty($errors['answer']))): ?>
                         <span class="<?php echo $errorclass ?>">

@@ -14,6 +14,7 @@ $option3 = "";
 $option4 = "";
 $success = "";
 
+
 if(isset($_POST['postquestion'])){
     unset($_POST['postquestion']);
     $errors = validatePost($_POST);
@@ -27,6 +28,8 @@ if(isset($_POST['postquestion'])){
         $errorclass = "error";
     }
     else{
+        //$_POST['answer'] = "jake<br>rahul singh<br>";
+        $_POST['answer'] = nl2br(htmlspecialchars($_POST['answer']));
         $_POST['reg_id']=$_SESSION['reg_id'];
         $postid = insertQuery("postquestion", $_POST);
         $success = "visible";

@@ -5,6 +5,12 @@ $username= "root";
 $password= "Rahul22-2-85";
 $dbname = "post";
 
+
+/*$host = "sql311.epizy.com";
+$username= "epiz_33625367";
+$password= "HnXqUFfCzdbAZ";
+$dbname = "epiz_33625367_post";*/
+
 $conn = new mysqli($host, $username, $password, $dbname);
 
 if($conn->connect_error){

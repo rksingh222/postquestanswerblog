@@ -1,3 +1,8 @@
+<?php session_start(); 
+   include("path.php");
+   include(ROOT_PATH . "middleware.php");
+   usersOnly();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,8 +21,6 @@
         body{
             background-color: #dee0e3;
         }
-
-
         .fixedtype {
             position: fixed;
             top: 0;
@@ -139,6 +142,7 @@
             <li class="navbar-links"><a href="adminblogpage.php">Post</a></li>
             <li class="navbar-links activecolor"><a style="color:white" href="#">About</a></li>
             <li class="navbar-links"><a href="contact.php">Contact</a></li>
+            <li class="navbar-links"><a href="logout.php">Logout</a></li>
         </ul>
     </div>
     <div class="heading">
