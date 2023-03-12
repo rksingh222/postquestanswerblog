@@ -76,30 +76,32 @@
 
 
 
-   
-    html{
-          min-height: 100%;
-          position: relative;
-       }
-       .container{
-           width: 100%;
-           height: 100%;
-       }
-       .container::after{
-           content: '';
-           position: absolute;
-           left: 0;
-           top: 0;
-           bottom: 0;
-           width: 100%;
-           background: url('./bg.jpg');
-           background-position: center;
-           background-repeat: no-repeat;
-           background-size: cover;
-           background-attachment: fixed;
-           z-index: -1;
-           filter: blur(50px);
-       }
+
+    html {
+        min-height: 100%;
+        position: relative;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: url('./bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: -1;
+        filter: blur(50px);
+    }
 
 
     form {
@@ -159,7 +161,7 @@
     .questiontextarea {
         width: 700px;
         height: 80px;
-        
+
     }
 
     .questiontextarea:hover,
@@ -250,9 +252,93 @@
         position: relative;
         margin-bottom: 20px;
     }
+
     /* for getting the br tag in text area when we hit enter  */
-    .textarea{
+    .textarea {
         white-space: pre-wrap;
+    }
+
+    @media screen and (max-width: 800px) {
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .questionheight{
+            height: 130px;
+        }
+        .questionlabel {
+            flex: 1;
+        }
+
+        .questionrootdiv {
+            flex: 1;
+        }
+
+        .questioncenteringdiv {
+            width: 400px;
+            margin: auto;
+        }
+
+        .questiontextarea {
+            width: 400px;
+            height: 80px;
+        }
+
+        .optionheight{
+            height: 300px;
+        }
+        .setoptionlabel {
+            flex: 15%;
+        }
+        .option{
+            flex: 85%;
+        }
+
+        .optioncenteringdiv {
+            margin: auto;
+            width: 420px;
+        }
+
+        .row-display-option {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .row-display-option label {
+            margin-bottom: 20px;
+            flex: 40%;
+        }
+
+        .row-display-option input {
+            flex: 40%;
+            margin-bottom: 20px;
+        }
+        .answerheight{
+            height: 480px;
+        }
+
+        .textareaouterspace {
+            flex: 3;
+        }
+
+        .textareacenteringdiv {
+            margin: auto;
+            width: 420px;
+        }
+        .textarea{
+            width: 420px;
+            height: 400px;
+        }
+        .buttoncenterdiv {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
     }
     </style>
 </head>
@@ -276,7 +362,7 @@
             <?php endif; ?>
             <div class="visible">post submitted successfully</div>
 
-            <div class="row">
+            <div class="row questionheight">
                 <label class="questionlabel">Post Question</label>
                 <div class="questionrootdiv">
                     <div class="questioncenteringdiv">
@@ -290,7 +376,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row optionheight" >
                 <label class="setoptionlabel">SetOption</label>
                 <div class="option">
                     <div class="optioncenteringdiv">
@@ -309,7 +395,7 @@
             </div>
 
 
-            <div class="row">
+            <div class="row answerheight">
                 <label class="textarealabel">Post Answer</label>
                 <div class="textareaouterspace">
                     <div class="textareacenteringdiv">

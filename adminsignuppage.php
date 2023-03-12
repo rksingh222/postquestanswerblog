@@ -36,29 +36,31 @@
         --Soft-red: #ed6468;
     }
 
-    html{
-          min-height: 100%;
-          position: relative;
-       }
-       .container{
-           width: 100%;
-           height: 100%;
-       }
-       .container::after{
-           content: '';
-           position: absolute;
-           left: 0;
-           top: 0;
-           bottom: 0;
-           width: 100%;
-           background: url('./bg.jpg');
-           background-position: center;
-           background-repeat: no-repeat;
-           background-size: cover;
-           background-attachment: fixed;
-           z-index: -1;
-           filter: blur(10px);
-       }
+    html {
+        min-height: 100%;
+        position: relative;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: url('./bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: -1;
+        filter: blur(10px);
+    }
 
     form {
         margin-top: 180px;
@@ -66,8 +68,6 @@
 
     .row {
         display: flex;
-        justify-content: center;
-        align-items: center;
         margin-bottom: 30px;
 
     }
@@ -132,7 +132,7 @@
     }
 
     .error {
-        color: #ed6468;
+        color: white;
         padding: 1em;
         font-family: 'Yeon Sung', cursive;
         width: 100%;
@@ -221,6 +221,86 @@
         flex: 1;
         color: white;
     }
+    @media screen and (max-width: 4000px) {
+        .row {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .passwordLabel,
+        .emailLabel {
+            text-align: center;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        form {
+            margin-top: 80px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-direction: column;
+            height: 150px;
+        }
+
+        .lastNameLabel,
+        .firstNameLabel,
+        .passwordLabel,
+        .emailLabel {
+            flex: 1;
+        }
+
+        .lastNameBox,
+        .firstNameBox,
+        .passwordBox,
+        .emailBox {
+            flex: 1,
+        }
+
+        .lastNameInputCentering,
+        .firstNameInputCentering,
+        .passwordInputCentering,
+        .emailInputCentering {
+            margin: auto;
+            width: 320px;
+            position: relative;
+        }
+
+        .buttoncenterdiv {
+            width: 100%;
+            text-align: center;
+        }
+
+        .spacewidth {
+            width: 100%;
+        }
+
+        .space {
+            width: 420px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .space .horizontalLine {
+            color: white;
+            background-color: white;
+            height: 3px;
+            flex: 3;
+        }
+
+        .space span {
+            text-align: center;
+            flex: 1;
+            color: white;
+        }
+    }
     </style>
 </head>
 
@@ -257,8 +337,8 @@
                     <div class="emailInputCentering">
                         <input class="emailInput" name="email" type="email" value="<?php echo $email ?>"
                             placeholder="Email...">
-                        <?php if (!(empty($errors)) && !(empty($errors['question']))): ?>
-                        <span class="<?php echo $errorclass ?>"><?php echo $errors['question'] ?></span>
+                        <?php if (!(empty($errors)) && !(empty($errors['email']))): ?>
+                        <span class="<?php echo $errorclass ?>"><?php echo $errors['email'] ?></span>
                         <?php endif; ?>
                     </div>
                 </div>

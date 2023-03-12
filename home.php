@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
 
@@ -76,29 +77,31 @@
             background-attachment: fixed;
             
         }*/
-      html{
-          min-height: 100%;
-          position: relative;
-       }
-       .container{
-           width: 100%;
-           height: 100%;
-       }
-       .container::after{
-           content: '';
-           position: absolute;
-           left: 0;
-           top: 0;
-           bottom: 0;
-           width: 100%;
-           background: url('./bg.jpg');
-           background-position: center;
-           background-repeat: no-repeat;
-           background-size: cover;
-           background-attachment: fixed;
-           z-index: -1;
-           filter: blur(50px);
-       }
+    html {
+        min-height: 100%;
+        position: relative;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: url('./bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: -1;
+        filter: blur(50px);
+    }
 
     .main-section {
 
@@ -108,7 +111,7 @@
         margin-top: 100px;
     }
 
-    
+
 
     .question-section {
 
@@ -161,7 +164,7 @@
     }
 
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 800px) {
         ul {
             flex-wrap: wrap;
         }
@@ -171,19 +174,81 @@
             padding-top: 24px;
             padding-right: 40px;
             display: block;
+            color: #67727e;
         }
 
         .navbar-links {
             display: none;
             width: 100%;
             text-align: center;
-            background-color: white;
         }
 
         .active {
             display: block;
         }
 
+        .main-section {
+            border: 2px solid #e0e0e0;
+            width: 700px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .question-section {
+            border: 2px solid #e0e0e0;
+            width: 660px;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+    }
+
+    @media screen and (max-width: 500px) {
+        ul {
+            flex-wrap: wrap;
+        }
+
+        .bar {
+            font-size: 24px;
+            padding-top: 24px;
+            padding-right: 40px;
+            display: block;
+            color: #67727e;
+        }
+
+        .navbar-links {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .main-section {
+            border: 2px solid #e0e0e0;
+            width: 420px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .question-section {
+            border: 2px solid #e0e0e0;
+            width: 400px;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: row;
+            padding-left: 5px;
+            padding-right: 5px;
+            flex-wrap: wrap;
+        } 
 
     }
     </style>
@@ -194,7 +259,7 @@
     <div class="fixedtype">
         <ul>
             <li class="logo">Post Question</li>
-            <li class="bar"><i class="fa fa-bars"></i></li>
+            <li class="bar"><i class="fa-solid fa-bars"></i></li>
             <li class="navbar-links activecolor"><a style="color:white" href="home.php">Home</a></li>
             <li class="navbar-links"><a href="adminblogpage.php">Post</a></li>
             <li class="navbar-links"><a href="about.php">About</a></li>
