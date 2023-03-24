@@ -301,6 +301,77 @@
             color: white;
         }
     }
+    @media screen and (max-width: 400px) {
+        form {
+            margin-top: 80px;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-direction: column;
+            height: 150px;
+        }
+
+        .lastNameLabel,
+        .firstNameLabel,
+        .passwordLabel,
+        .emailLabel {
+            flex: 1;
+        }
+
+        .lastNameBox,
+        .firstNameBox,
+        .passwordBox,
+        .emailBox {
+            flex: 1,
+        }
+
+        .lastNameInputCentering,
+        .firstNameInputCentering,
+        .passwordInputCentering,
+        .emailInputCentering {
+            margin: auto;
+            width: 240px;
+            position: relative;
+        }
+
+        .buttoncenterdiv {
+            width: 100%;
+            text-align: center;
+        }
+
+        .spacewidth {
+            width: 100%;
+        }
+
+        .space {
+            width: 240px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .space .horizontalLine {
+            color: white;
+            background-color: white;
+            height: 3px;
+            flex: 3;
+        }
+
+        .space span {
+            text-align: center;
+            flex: 1;
+            color: white;
+        }
+        .signupmargin{
+            margin-bottom: 20px;
+        }
+    }
     </style>
 </head>
 
@@ -369,7 +440,7 @@
             </div>
 
 
-            <div class="buttoncenterdiv">
+            <div class="buttoncenterdiv signupmargin">
                 <button class="loginbutton" name="loginfromsignup">Already Signed Up then Login</button>
             </div>
 

@@ -251,6 +251,59 @@
         } 
 
     }
+    @media screen and (max-width: 400px) {
+        ul {
+            flex-wrap: wrap;
+        }
+
+        .bar {
+            font-size: 24px;
+            padding-top: 24px;
+            padding-right: 40px;
+            display: block;
+            color: #67727e;
+        }
+
+        .navbar-links {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .main-section {
+            border: 2px solid #e0e0e0;
+            width: 280px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .question-section {
+            border: 2px solid #e0e0e0;
+            width: 240px;
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: row;
+            padding-left: 5px;
+            padding-right: 5px;
+            flex-wrap: wrap;
+        } 
+        .options div{
+            flex: 50%;
+            margin-bottom: 10px;
+        }
+        h4 {
+            font-size: 20px;
+        }
+    }
     </style>
 </head>
 

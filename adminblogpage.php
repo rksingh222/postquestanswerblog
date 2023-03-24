@@ -12,6 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap');
 
@@ -259,6 +260,27 @@
     }
 
     @media screen and (max-width: 800px) {
+        ul {
+            flex-wrap: wrap;
+        }
+
+        .bar {
+            font-size: 24px;
+            padding-top: 24px;
+            padding-right: 40px;
+            display: block;
+            color: #67727e;
+        }
+
+        .navbar-links {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
         .row {
             display: flex;
             flex-direction: column;
@@ -332,6 +354,109 @@
         }
         .textarea{
             width: 420px;
+            height: 400px;
+        }
+        .buttoncenterdiv {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        ul {
+            flex-wrap: wrap;
+        }
+
+        .bar {
+            font-size: 24px;
+            padding-top: 24px;
+            padding-right: 40px;
+            display: block;
+            color: #67727e;
+        }
+
+        .navbar-links {
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .active {
+            display: block;
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .questionheight{
+            height: 130px;
+        }
+        .questionlabel {
+            flex: 1;
+        }
+
+        .questionrootdiv {
+            flex: 1;
+        }
+
+        .questioncenteringdiv {
+            width: 280px;
+            margin: auto;
+        }
+
+        .questiontextarea {
+            width: 280px;
+            height: 80px;
+        }
+
+        .optionheight{
+            height: 300px;
+        }
+        .setoptionlabel {
+            flex: 15%;
+        }
+        .option{
+            flex: 85%;
+        }
+
+        .optioncenteringdiv {
+            margin: auto;
+            width: 280px;
+        }
+
+        .row-display-option {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .row-display-option label {
+            margin-bottom: 20px;
+            flex: 40%;
+        }
+
+        .row-display-option input {
+            flex: 40%;
+            margin-bottom: 20px;
+        }
+        .answerheight{
+            height: 480px;
+        }
+
+        .textareaouterspace {
+            flex: 3;
+        }
+
+        .textareacenteringdiv {
+            margin: auto;
+            width: 280px;
+        }
+        .textarea{
+            width: 280px;
             height: 400px;
         }
         .buttoncenterdiv {
@@ -417,6 +542,14 @@
 
     <script>
     console.log('test');
+
+    var bar = document.getElementsByClassName('bar')[0];
+    var leftnavbaractive = document.getElementsByClassName('navbar-links');
+    bar.addEventListener("click", () => {
+        for (var i = 0; i < leftnavbaractive.length; i++) {
+            leftnavbaractive[i].classList.toggle('active');
+        }
+    })
 
     function onVisible(element, callback) {
         new IntersectionObserver((entries, observer) => {
